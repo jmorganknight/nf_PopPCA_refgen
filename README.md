@@ -309,6 +309,8 @@ Typical verification steps:
 
 ## Citation & license
 
+Pipeline version v1.0.0 released with pre-computed reference assets.
+
 This project is intended to be released under the **MIT License**. Include the standard MIT text in the repository or release bundle when publishing artifacts.
 
 For citation guidance, include `CITATION.cff` in the repository or release bundle when publishing artifacts.
