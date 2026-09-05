@@ -271,7 +271,7 @@ Use the release helper to fetch the published weight matrices directly:
 ./bin/download_models.sh --outdir ./models
 ```
 
-Set `MODEL_BUNDLE_URL` to a GitHub Releases or Zenodo archive URL before running the helper. The script downloads the bundle, computes SHA-256 checksums for each `.normalized_weights.tsv` file, and verifies them against the published hashes before the bundle is considered usable.
+Set `MODEL_BUNDLE_URL` to the official GitHub Release asset URL before running the helper (default: `https://github.com/jmorganknight/nf_PopPCA_refgen/releases/download/v1.0.0/nf_PopPCA_refgen_v1.0.0_models.tar.gz`). The script downloads the bundle, computes SHA-256 checksums for each `.normalized_weights.tsv` file, and verifies them against the published hashes before the bundle is considered usable.
 
 ## Output directory specification
 

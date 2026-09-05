@@ -8,7 +8,7 @@ Usage:
 
 Options:
   --outdir       Destination directory (default: example/models)
-  --bundle-url   URL to model bundle .tar.gz (default: GitHub v1.0.0 release)
+  --bundle-url   URL to model bundle .tar.gz (default: GitHub Releases v1.0.0 asset URL)
   -h, --help     Show this help message
 
 Environment:
