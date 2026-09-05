@@ -105,6 +105,44 @@ nextflow run . -profile docker --ref_dir "/path/to/reference_mount" --outdir "./
 | `--ld_r2` | LD pruning $r^2$ threshold | `0.2` |
 | `--pca_components` | Number of PCs to compute | `10` |
 
+## Configuration Workflows
+
+Use one of the following configuration workflows depending on whether you want per-run flexibility or persistent defaults.
+
+### 1. Dynamic CLI Overrides (At Runtime)
+
+All key parameters, paths, and manifests can be overridden directly in the launch command for each run.
+
+Example runtime override command:
+
+```bash
+nextflow run . \
+  -profile docker \
+  --ref_dir /mnt/ref_bundle \
+  --ref_manifest assets/references.yaml \
+  --outdir ./results_run01
+```
+
+Example for projection/integration wrappers that also expose model path arguments such as `--global_pcs`:
+
+```bash
+nextflow run . --ref_dir /mnt/ref_bundle --global_pcs /mnt/models/layer1/global/global_pca.eigenvec --outdir ./results_projection
+```
+
+### 2. Direct Asset File Modification (Zero-CLI Default Configuration)
+
+To set persistent local defaults, edit the asset files directly:
+
+- `assets/params.yaml`
+- `assets/references.yaml`
+- `assets/infrastructure.yaml`
+
+After updating these files, run with a clean default command and no extra CLI flags:
+
+```bash
+nextflow run .
+```
+
 ## Pre-computed Example Reference Model
 
 The repository includes a ready-to-use baseline bundle under `example/models/` so developers can inspect coordinates, validate integration logic, and test cohort mapping without rebuilding the full reference set first.
