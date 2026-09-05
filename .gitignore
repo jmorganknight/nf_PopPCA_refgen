@@ -1,0 +1,19 @@
+.nextflow/
+.nextflow.log*
+work/
+results/
+.ci/results/
+.DS_Store
+__pycache__/
+*.pyc
+
+# Heavy reference model matrices (exceeding 100MB Git limit)
+example/models/**/*.normalized_weights.tsv
+example/models/**/*.eigenvec.allele
+example/models/**/*.afreq
+
+# Release archives
+*.tar.gz
+
+.pytest_cache/
+.nextflow-test-work/

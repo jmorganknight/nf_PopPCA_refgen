@@ -1,0 +1,204 @@
+{
+  "pipeline": {
+    "name": "nf_PopPCA_refgen",
+    "git_commit": "unknown",
+    "nextflow_version": "25.04.3",
+    "execution_timestamp": "2026-09-04T11:56:47.821211045-05:00",
+    "profile": "docker"
+  },
+  "environment": {
+    "container": "local/poppca_tools:latest",
+    "plink2_version": "PLINK v2.0.0-a.7.0LM 64-bit Intel (25 Apr 2026)",
+    "plink1_version": "PLINK v1.90b7 64-bit (16 Jan 2023)",
+    "awk_version": "GNU Awk 5.1.0, API: 3.0 (GNU MPFR 4.1.0, GNU MP 6.2.1)",
+    "python3_version": "Python 3.10.12",
+    "execution_command": "nextflow run . -profile docker --ref_dir '/media/jmk/Extreme Pro/PopPCA_refgen_References' --outdir ./results -with-report ./results/pipeline_info/execution_report.html",
+    "kernel": "Linux 6.8.0-101-generic",
+    "cpu_model": "AMD Ryzen Threadripper PRO 5975WX 32-Cores",
+    "memory_gb": {
+      "total_gb": 503,
+      "used_gb": 18,
+      "free_gb": 4
+    }
+  },
+  "config_lineage": {
+    "params_yaml": {
+      "path": "assets/params.yaml",
+      "sha256": "0afdbd5422a5dd4b1e80178afb1f9142853aeb89f421a15c8a5bb4ef2d0e1a5c"
+    },
+    "high_ld_regions": {
+      "path": "high_ld_regions_hg38.bed",
+      "sha256": "a29c1a69009320671824f22a89224843bde98b858beeb2c25e9df477fae9da32"
+    }
+  },
+  "matrix_qc_summary": {
+    "global": {
+      "sample_count": 3494,
+      "variant_count": 603906
+    },
+    "sublayers": [
+      {
+        "superpop": "AFR",
+        "sample_count": 763,
+        "variant_count": 603906
+      },
+      {
+        "superpop": "AMR",
+        "sample_count": 397,
+        "variant_count": 603906
+      },
+      {
+        "superpop": "EAS",
+        "sample_count": 687,
+        "variant_count": 603906
+      },
+      {
+        "superpop": "EUR",
+        "sample_count": 657,
+        "variant_count": 603906
+      },
+      {
+        "superpop": "SAS",
+        "sample_count": 681,
+        "variant_count": 603906
+      }
+    ]
+  },
+  "input_lineage": [
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr1.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "61511147295e32b55b4db8e800d12ad4aed68d458d3e4c301660f1594db07d1b"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr2.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "250ddbfa12d27583f2db883e980f3a4df74a9d802084278ce28c6338b75ecbfc"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr3.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "098550136d38d922154dac676297f8622f58e92ea1c0ea9cc5f60925436d32aa"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr4.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "e814e49388623b2e2b69bfb95ce9b67e9da7c78911f85ca86f403ce7d528eb73"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr5.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "810059e7986b0d62a9c335ad6661b58b0023b0b0d54a26731ba202c9c883a937"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr6.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "e62c07e30600258cd508bbf7d041d4bf8710e517dc0a61b009bfce54b3372776"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr7.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "0c61fbddfacf8897ae361daad43d992d557b846be6d3659fcda1ca7969b0b6a2"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr8.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "7edb69aa77dc6d2a2ecb68a4f37999b11e2da3cd68d43812bece0ae9a9bd9f31"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr9.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "6fc141568b9b9e40b12cda17da2964765b4335095094e864ef2991fe31fbb04e"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr10.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "8afd2ce5a688b80e2093cf15986fe8df594d35348e81fa4ff2f260ae0883a52f"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr11.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "4449e17a9eaea9d8c423d3a9fc223178848ece491a9f30a3bd451bedda784d64"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr12.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "ea2ea1861bf05fc7f3fb68567736b8194932a69d6cb5b731123ad01353be0bed"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr13.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "3cd298d9cf7fd7fd63e1fe28686f0373c022fcacabe9fc4fb476dfe5f2729813"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr14.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "097576cdeb6d22188af2581b797517557825258cc10c0b7dc2aeb0be9a3d936b"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr15.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "8a140e8b417a2de1afbf70efcd5cd7c5179ff6e8fce061d9f4eec8fcf8749ebc"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr16.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "d7a8b7521ca5361877f63ce6dcef0d734a53679fbd13fbccf61858f3c91c7883"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr17.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "f0f8604eb41a8f12ce6618884a410089ff6dfcce061da7417c346b223431e1ca"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr18.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "760a465f13368d6a265a9aeddfa41c13ceacaf855a5b9572ab14574b9b059a75"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr19.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "b8ef1404de502ed94bcd61c82a1fb0b5ed7d1462b4ac185198c6c5e0c91ae68d"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr20.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "c2624c726c6cb27e288fe5908621125740379a3d523299dd07c13abf97645e4b"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr21.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "574209ba9edbfda028651e631041e67bdf340fdd2d19d655c38ea3fff0287a25"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr22.filtered.shapeit2-duohmm-phased.vcf.gz",
+      "sha256": "70ff24cfd01eab24c6f4c6e825f55a2b3475ff595f6e12e179c4ef06b9cc4df6"
+    },
+    {
+      "dataset_id": "1000g_phase3_wgs",
+      "file_path": "inputs/1000G/1000G_metadata.tsv",
+      "sha256": "38687335d053056d799891a37c42b1ac24a5a2a1eb5fccaf34db58188bccfff7"
+    },
+    {
+      "dataset_id": "hgdp_highcov_wgs",
+      "file_path": "inputs/HGDP/hgdp_wgs.20190516.full.vcf.gz",
+      "sha256": "486add5eada5e595a4827f1d194be3401c69b5d163bdc3c4087efc639ccd24b4"
+    },
+    {
+      "dataset_id": "hgdp_highcov_wgs",
+      "file_path": "inputs/HGDP/hgdp_wgs.20190516.full.vcf.gz.tbi",
+      "sha256": "b45576d4d63aeb65e374cf33df8e563535322e17b777981ad93d6b6eaf1c8a2d"
+    },
+    {
+      "dataset_id": "hgdp_highcov_wgs",
+      "file_path": "inputs/HGDP/hgdp_metadata.tsv",
+      "sha256": "e18e7a29d0567b8063edc1a714bd31e57dc422823ba51af2c63fecef0dbc3cf1"
+    }
+  ],
+  "output_manifests": {
+    "layer1_global": "models/layer1/global/global_summary.json",
+    "layer2_sublayer": "models/layer2/sub_summary.json",
+    "global_weights_sha256": "364a2d77fda36ae39fafacd7d06c17a1aa9db8253e24cce412da3f4f7fc4f929"
+  }
+}

@@ -1,0 +1,132 @@
+manifest_version: 1
+target_build: GRCh38
+description: >-
+  Active reference-panel intake manifest for building two-layer ancestry PCA assets.
+  Set active: true only for panels that should participate in the current build.
+
+datasets:
+  - id: 1000g_phase3_wgs
+    label: 1000 Genomes NYGC 30x WGS (GRCh38)
+    active: true
+    assay: WGS
+    superpop: GLOBAL
+    sample_count: 2504
+    build: GRCh38
+    input:
+      format: vcf
+      paths:
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr1.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "61511147295e32b55b4db8e800d12ad4aed68d458d3e4c301660f1594db07d1b"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr2.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "250ddbfa12d27583f2db883e980f3a4df74a9d802084278ce28c6338b75ecbfc"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr3.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "098550136d38d922154dac676297f8622f58e92ea1c0ea9cc5f60925436d32aa"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr4.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "e814e49388623b2e2b69bfb95ce9b67e9da7c78911f85ca86f403ce7d528eb73"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr5.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "810059e7986b0d62a9c335ad6661b58b0023b0b0d54a26731ba202c9c883a937"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr6.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "e62c07e30600258cd508bbf7d041d4bf8710e517dc0a61b009bfce54b3372776"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr7.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "0c61fbddfacf8897ae361daad43d992d557b846be6d3659fcda1ca7969b0b6a2"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr8.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "7edb69aa77dc6d2a2ecb68a4f37999b11e2da3cd68d43812bece0ae9a9bd9f31"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr9.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "6fc141568b9b9e40b12cda17da2964765b4335095094e864ef2991fe31fbb04e"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr10.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "8afd2ce5a688b80e2093cf15986fe8df594d35348e81fa4ff2f260ae0883a52f"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr11.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "4449e17a9eaea9d8c423d3a9fc223178848ece491a9f30a3bd451bedda784d64"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr12.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "ea2ea1861bf05fc7f3fb68567736b8194932a69d6cb5b731123ad01353be0bed"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr13.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "3cd298d9cf7fd7fd63e1fe28686f0373c022fcacabe9fc4fb476dfe5f2729813"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr14.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "097576cdeb6d22188af2581b797517557825258cc10c0b7dc2aeb0be9a3d936b"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr15.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "8a140e8b417a2de1afbf70efcd5cd7c5179ff6e8fce061d9f4eec8fcf8749ebc"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr16.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "d7a8b7521ca5361877f63ce6dcef0d734a53679fbd13fbccf61858f3c91c7883"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr17.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "f0f8604eb41a8f12ce6618884a410089ff6dfcce061da7417c346b223431e1ca"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr18.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "760a465f13368d6a265a9aeddfa41c13ceacaf855a5b9572ab14574b9b059a75"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr19.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "b8ef1404de502ed94bcd61c82a1fb0b5ed7d1462b4ac185198c6c5e0c91ae68d"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr20.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "c2624c726c6cb27e288fe5908621125740379a3d523299dd07c13abf97645e4b"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr21.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "574209ba9edbfda028651e631041e67bdf340fdd2d19d655c38ea3fff0287a25"
+        - path: "inputs/1000G_GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr22.filtered.shapeit2-duohmm-phased.vcf.gz"
+          expected_sha256: "70ff24cfd01eab24c6f4c6e825f55a2b3475ff595f6e12e179c4ef06b9cc4df6"
+    metadata:
+      path:
+        path: "inputs/1000G/1000G_metadata.tsv"
+        expected_sha256: "38687335d053056d799891a37c42b1ac24a5a2a1eb5fccaf34db58188bccfff7"
+      sample_id_col: "Individual ID"
+      pop_col: "Population"
+      superpop_col: "Population"
+
+  - id: hgdp_highcov_wgs
+    label: HGDP High-Coverage Whole Genome Sequencing
+    active: true
+    assay: WGS
+    superpop: GLOBAL
+    sample_count: 929
+    build: GRCh38
+    input:
+      format: vcf
+      paths:
+        - path: "inputs/HGDP/hgdp_wgs.20190516.full.vcf.gz"
+          expected_sha256: "486add5eada5e595a4827f1d194be3401c69b5d163bdc3c4087efc639ccd24b4"
+        - path: "inputs/HGDP/hgdp_wgs.20190516.full.vcf.gz.tbi"
+          expected_sha256: "b45576d4d63aeb65e374cf33df8e563535322e17b777981ad93d6b6eaf1c8a2d"
+    metadata:
+      path:
+        path: "inputs/HGDP/hgdp_metadata.tsv"
+        expected_sha256: "e18e7a29d0567b8063edc1a714bd31e57dc422823ba51af2c63fecef0dbc3cf1"
+      sample_id_col: "project_meta.sample_id"
+      pop_col: "population_inference.pop"
+      superpop_col: "population_inference.pop"
+
+  - id: gnomad_wes_eur
+    label: gnomAD WES EUR panel
+    active: false
+    assay: WES
+    superpop: EUR
+    sample_count: 540
+    build: GRCh38
+    input:
+      format: plink2
+      paths:
+        - inputs/gnomad/wes_eur_panel.pgen
+        - inputs/gnomad/wes_eur_panel.pvar
+        - inputs/gnomad/wes_eur_panel.psam
+
+  - id: array_amr_core
+    label: Microarray AMR core reference
+    active: false
+    assay: Microarray
+    superpop: AMR
+    sample_count: 320
+    build: GRCh38
+    input:
+      format: plink1
+      paths:
+        - inputs/microarray/amr_core.bed
+        - inputs/microarray/amr_core.bim
+        - inputs/microarray/amr_core.fam
+
+  - id: mena_array_extension
+    label: MENA microarray extension panel
+    active: false
+    assay: Microarray
+    superpop: MENA
+    sample_count: 154
+    build: GRCh38
+    input:
+      format: plink2
+      paths:
+        - inputs/mena/extension_panel.pgen
+        - inputs/mena/extension_panel.pvar
+        - inputs/mena/extension_panel.psam

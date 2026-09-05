@@ -1,0 +1,14 @@
+{
+  "layer": "global",
+  "sample_count": 3494,
+  "variant_count": 603906,
+  "build": "GRCh38",
+  "files": {
+    "layer1/global/global_pca.eigenvec": "72a79c9507bc4c89b0eb20ab6c9af8c3eb78799bc5a066c535648bde90b54550",
+    "layer1/global/global_pca.eigenval": "7ffbdc8287a18c0729c16e82f898288ff8cf4d3bbb9eb9f5a7a5c05310e5ba75",
+    "layer1/global/global_pca.eigenvec.allele": "7413b2d875d147d06c87bd2e2a1eea838ab761d47638f07871bbc72ad731aeab",
+    "layer1/global/global_pca.normalized_weights.tsv": "364a2d77fda36ae39fafacd7d06c17a1aa9db8253e24cce412da3f4f7fc4f929",
+    "layer1/global/global_pca.afreq": "3a7381d9afb354cd825ad3c2b89fe7f1657d49a3f761ed8a3de48d4f7af291e6",
+    "layer1/global/global_samples.tsv": "5f0ca23868e7052544b8a81f13b93b67ca38f92334b167a9ba35250a6d732dbe"
+  }
+}

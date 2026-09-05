@@ -1,0 +1,124 @@
+<!--
+  ~ Copyright 2013-2024, Seqera Labs
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<pre class="mermaid" style="text-align: center;">
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#B6ECE2',
+      'primaryTextColor': '#160F26',
+      'primaryBorderColor': '#065647',
+      'lineColor': '#545555',
+      'clusterBkg': '#BABCBD22',
+      'clusterBorder': '#DDDEDE',
+      'fontFamily': 'arial'
+    }
+  }
+}%%
+flowchart TB
+    subgraph " "
+    v0["ch_ref_manifest"]
+    v14["ch_high_ld"]
+    v34["ch_ref_manifest_file"]
+    v35["ch_params_yaml"]
+    v36["git_commit"]
+    v37["nextflow_version"]
+    v38["run_profile"]
+    v39["execution_timestamp"]
+    v40["execution_command"]
+    v41["container_ref"]
+    end
+    v1(["PARSE_MANIFEST"])
+    subgraph " "
+    v2[" "]
+    v13[" "]
+    v20[" "]
+    v21[" "]
+    v22[" "]
+    v23[" "]
+    v24[" "]
+    v28[" "]
+    v29[" "]
+    v30[" "]
+    v31[" "]
+    v32[" "]
+    v33[" "]
+    v43[" "]
+    v48[" "]
+    end
+    v9(["NORMALIZE_INPUTS"])
+    v12(["INTERSECT_VARIANTS"])
+    v15(["QC_AND_PRUNE"])
+    v19(["GENERATE_GLOBAL_PCA"])
+    v27(["GENERATE_SUBLAYER_PCA"])
+    v42(["EMIT_PROVENANCE"])
+    v3(( ))
+    v10(( ))
+    v16(( ))
+    v44(( ))
+    v0 --> v1
+    v1 --> v2
+    v1 --> v3
+    v3 --> v9
+    v9 --> v15
+    v9 --> v10
+    v10 --> v12
+    v12 --> v15
+    v12 --> v13
+    v14 --> v15
+    v14 --> v42
+    v15 --> v16
+    v16 --> v19
+    v19 --> v24
+    v19 --> v23
+    v19 --> v22
+    v19 --> v42
+    v19 --> v21
+    v19 --> v20
+    v19 --> v44
+    v16 --> v27
+    v27 --> v33
+    v27 --> v32
+    v27 --> v31
+    v27 --> v30
+    v27 --> v29
+    v27 --> v28
+    v27 --> v42
+    v27 --> v44
+    v34 --> v42
+    v35 --> v42
+    v36 --> v42
+    v37 --> v42
+    v38 --> v42
+    v39 --> v42
+    v40 --> v42
+    v41 --> v42
+    v3 --> v42
+    v42 --> v43
+    v44 --> v48
+
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, maxTextSize: Number.MAX_SAFE_INTEGER, maxEdges: Number.MAX_SAFE_INTEGER });
+</script>
+</body>
+</html>

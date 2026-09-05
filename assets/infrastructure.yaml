@@ -1,0 +1,16 @@
+environment:
+  executor: "local"               # Options: "local", "slurm", "awsbatch"
+  container_engine: "docker"      # Options: "docker", "apptainer"
+  scratch_work_dir: "work"
+
+hardware_limits:
+  max_cpus: 32
+  max_memory: "480 GB"
+
+process_allocations:
+  default_task:
+    cpus: 8
+    memory: "32 GB"
+  heavy_task:
+    cpus: 28
+    memory: "384 GB"

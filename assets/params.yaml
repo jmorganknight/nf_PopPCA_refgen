@@ -1,0 +1,30 @@
+# User-facing defaults for nf_PopPCA_refgen.
+# Run with: nextflow run main.nf -params-file assets/params.yaml
+
+infrastructure_config: assets/infrastructure.yaml
+ref_manifest: assets/references.yaml
+high_ld_regions: assets/high_ld_regions_hg38.bed
+outdir: "./results"
+workdir: null
+
+target_build: GRCh38
+ref_fasta: null
+
+plink2_container: quay.io/biocontainers/plink2:2.00a5.12--h4ac6f70_0
+
+liftover_enabled: true
+liftover_chain: null
+liftover_ref_fasta: null
+liftover_map_dir: null
+crossmap_cmd: CrossMap.py
+
+min_shared_variants: 100000
+min_subgroup_samples: 30
+maf: 0.01
+hwe: 1e-6
+geno: 0.02
+king_cutoff: 0.0884
+ld_window: 50
+ld_step: 5
+ld_r2: 0.2
+pca_components: 10

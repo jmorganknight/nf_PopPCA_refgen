@@ -1,0 +1,10 @@
+task_id	name	status	exit	realtime	cpus	memory	rss	peak_rss	vmem	peak_vmem	workdir
+1	PARSE_MANIFEST (manifest:references.yaml)	COMPLETED	-	3m 26s	1	1 GB	-	-	-	-	<repository_root>/work/28/4f28cd80f0c5cc95d40731592c082c
+3	NORMALIZE_INPUTS (normalize:hgdp_highcov_wgs)	COMPLETED	0	1h 2m 11s	8	32 GB	10.1 GB	10.1 GB	251.9 GB	251.9 GB	<repository_root>/work/e9/084f4b352e15a4c6f9df8f721d3a7b
+2	NORMALIZE_INPUTS (normalize:1000g_phase3_wgs)	COMPLETED	0	1h 25m 52s	8	32 GB	5.3 GB	5.3 GB	251.9 GB	251.9 GB	<repository_root>/work/92/c410213dd0da1995e6bc5e74ebf5e4
+4	INTERSECT_VARIANTS (variant-intersection)	COMPLETED	0	38s	2	16 GB	7.2 GB	7.4 GB	65.1 GB	65.1 GB	<repository_root>/work/71/684f835e2117bf9929282b9dab729b
+5	QC_AND_PRUNE (qc:hgdp_highcov_wgs)	COMPLETED	0	47.7s	28	384 GB	7.1 GB	7.1 GB	251.8 GB	251.8 GB	<repository_root>/work/56/62303840cf4fd683066a06c7b6485f
+6	QC_AND_PRUNE (qc:1000g_phase3_wgs)	COMPLETED	0	3m 36s	28	384 GB	5.5 GB	5.5 GB	251.8 GB	251.8 GB	<repository_root>/work/c4/6c5e3ab18104f6d773ba8f80fad246
+7	GENERATE_GLOBAL_PCA (global-pca)	COMPLETED	0	52.1s	28	384 GB	833.5 MB	833.5 MB	254 GB	254 GB	<repository_root>/work/0a/f48b270830912ba5ed0d3ed9642cc3
+8	GENERATE_SUBLAYER_PCA (sub-pca)	COMPLETED	0	1m 20s	28	384 GB	833.4 MB	833.4 MB	258 GB	258 GB	<repository_root>/work/9b/dd8dd4144f9c06e0765fcf575306a2
+9	EMIT_PROVENANCE (provenance)	COMPLETED	0	3m 12s	8	32 GB	18.2 MB	18.2 MB	27.1 MB	27.1 MB	<repository_root>/work/df/6dbe0a495c8a3d62c0cf62c5cb61e1

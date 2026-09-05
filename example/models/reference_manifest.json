@@ -1,0 +1,76 @@
+{
+    "pipeline": "nf_PopPCA_refgen",
+    "target_build": "GRCh38",
+    "total_sample_count": 3494,
+    "generated_layers": {
+        "global": {
+            "sample_count": 3494,
+            "variant_count": 603906
+        },
+        "sublayers": [
+            {
+                "superpop": "AFR",
+                "sample_count": 763,
+                "variant_count": 603906
+            },
+            {
+                "superpop": "AMR",
+                "sample_count": 397,
+                "variant_count": 603906
+            },
+            {
+                "superpop": "EAS",
+                "sample_count": 687,
+                "variant_count": 603906
+            },
+            {
+                "superpop": "EUR",
+                "sample_count": 657,
+                "variant_count": 603906
+            },
+            {
+                "superpop": "SAS",
+                "sample_count": 681,
+                "variant_count": 603906
+            }
+        ]
+    },
+    "file_checksums": {
+        "layer1/global/global_pca.eigenvec": "72a79c9507bc4c89b0eb20ab6c9af8c3eb78799bc5a066c535648bde90b54550",
+        "layer1/global/global_pca.eigenval": "7ffbdc8287a18c0729c16e82f898288ff8cf4d3bbb9eb9f5a7a5c05310e5ba75",
+        "layer1/global/global_pca.eigenvec.allele": "7413b2d875d147d06c87bd2e2a1eea838ab761d47638f07871bbc72ad731aeab",
+        "layer1/global/global_pca.normalized_weights.tsv": "364a2d77fda36ae39fafacd7d06c17a1aa9db8253e24cce412da3f4f7fc4f929",
+        "layer1/global/global_pca.afreq": "3a7381d9afb354cd825ad3c2b89fe7f1657d49a3f761ed8a3de48d4f7af291e6",
+        "layer1/global/global_samples.tsv": "5f0ca23868e7052544b8a81f13b93b67ca38f92334b167a9ba35250a6d732dbe",
+        "layer2/AFR/AFR_pca.eigenvec": "19a87d5d16d903e8cd98a0c58a777265e60777eaee3f92121c2db0b250f90d17",
+        "layer2/AFR/AFR_pca.eigenval": "68a06839b75ef71af3c1662a49b3c2e4703b460b38e8177b6245a87a18b1bb87",
+        "layer2/AFR/AFR_pca.eigenvec.allele": "a73f6334a36812fbadd64cf442658ce283d28f0a776b0624271600459bf6d330",
+        "layer2/AFR/AFR_pca.normalized_weights.tsv": "2728ad95f30fc6e5f7fd768cdc47f3b7618e2490aca037065fa417afb0c398ce",
+        "layer2/AFR/AFR_pca.afreq": "34480a80f27ce9cc7d404221c5e14c9f0fca5bfefd0020769ec6fca1027f4cc6",
+        "layer2/AFR/AFR_samples.tsv": "5e4df40d3ae9ed7f4233875c98999c562fc5a077348642197b3684dc98ec16c6",
+        "layer2/AMR/AMR_pca.eigenvec": "0fea241d11c4190a0d422867471ad4fef6254a50eb9e2b6e87a50825ad07c096",
+        "layer2/AMR/AMR_pca.eigenval": "31d461233cac342b3462ddbf641f55600a7f53023c1207377c1302e60cc13616",
+        "layer2/AMR/AMR_pca.eigenvec.allele": "ca00765cd254e4202b458979520b06ab7f80cde48dfa2571be6b132bbb302d60",
+        "layer2/AMR/AMR_pca.normalized_weights.tsv": "39ee2c8cc88cc47c1a4528b266eeb30d37be2ca385f67be4fb1297b46aecd135",
+        "layer2/AMR/AMR_pca.afreq": "3e9b0067ea9691179cc1e4a0407f4c8bdf907be9caeeb9905d0876dd81c491df",
+        "layer2/AMR/AMR_samples.tsv": "b9daa83728f04903ec94b1f06690cad0a0cf948a121e5b0f4ae7cd6045aff4b6",
+        "layer2/EAS/EAS_pca.eigenvec": "bdc1eedde0778a68c5c425db090c8c756654923751908bfae3dfc73b9bf0cc8d",
+        "layer2/EAS/EAS_pca.eigenval": "37d17fe98fe08e6b8f631e14a5883d4e17585a8d193c2e8fec94293ac27ce007",
+        "layer2/EAS/EAS_pca.eigenvec.allele": "f9f202644d6ea11a2562f3fbad50f946e1cfa27c8f2f7ef0de00e71d3102a73b",
+        "layer2/EAS/EAS_pca.normalized_weights.tsv": "95c9ef799adf23d0f26c268b60bb0b14a395b7338d57ebb6bae03ec415c152eb",
+        "layer2/EAS/EAS_pca.afreq": "cae7da4424ff1093e83f4cd32fd66ec4bba9cadf94f2ef203cb8da1a74096b90",
+        "layer2/EAS/EAS_samples.tsv": "9271d82f8ed1f5d9dd8bb2626f50db6af8b297427f09023ed91be4b14b30c735",
+        "layer2/EUR/EUR_pca.eigenvec": "daa343b08e777c34fd1195606b6436ea245697e4e30e6539e16cc6e1263bd3e5",
+        "layer2/EUR/EUR_pca.eigenval": "37649992591e485627f921152f65182307d6273a165366c2adc3c1e1bf500225",
+        "layer2/EUR/EUR_pca.eigenvec.allele": "9f0cf5c681510fa7798e44db2abb8ad316c34d0e714caa34c36c0fd569a5866a",
+        "layer2/EUR/EUR_pca.normalized_weights.tsv": "b1fe75feffd221416772ccc024b014629338149890c7da94dcff5c7c8fab7017",
+        "layer2/EUR/EUR_pca.afreq": "6ad9eac45fb48e92d2c364b650752de9eed098f344d1cb3a261e55f12c20cde9",
+        "layer2/EUR/EUR_samples.tsv": "4cb1dbc262f1e7bf399538e2dbacb4640e3f888d0818e8ce612eb967cff91ce8",
+        "layer2/SAS/SAS_pca.eigenvec": "3429b8eb836e548b846a950416aa674d0f43d695ac5c7cb5e8995d15e73769d9",
+        "layer2/SAS/SAS_pca.eigenval": "bb5b607a5ae4c9f0d6b862f2643e34747ba8154c169d1c930fbd2511b5aeb885",
+        "layer2/SAS/SAS_pca.eigenvec.allele": "3ad66b059b3c7cc276664212e0ceb7cfa92b8616521bea8f123e3ca2f3828e8d",
+        "layer2/SAS/SAS_pca.normalized_weights.tsv": "3a0422a6cc64172d8d78a901396b54a31932ba440d4643a9ba79c6ca3565649e",
+        "layer2/SAS/SAS_pca.afreq": "5e88c8043dddb134489e0b62279e0f9b7ffb9110f15a650254435d3852423f78",
+        "layer2/SAS/SAS_samples.tsv": "ac548d93d09e375d40ec45b104a9c6700ae67b8ae2639123fbb2940e48c9f1fe"
+    }
+}

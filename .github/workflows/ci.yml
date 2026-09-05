@@ -1,0 +1,52 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+
+jobs:
+  pipeline-smoke-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Nextflow
+        run: |
+          curl -s https://get.nextflow.io | bash
+          sudo mv nextflow /usr/local/bin/nextflow
+          nextflow -version
+
+      - name: Create synthetic inputs
+        run: |
+          mkdir -p .ci/inputs
+          touch .ci/inputs/afr_stub.vcf.gz
+          touch .ci/inputs/afr_stub.vcf.gz.tbi
+          touch .ci/inputs/eur_stub.pgen
+          printf 'environment:\n  executor: "local"\n  container_engine: "docker"\n  scratch_work_dir: "%s/.ci/work"\n\nhardware_limits:\n  max_cpus: 4\n  max_memory: "8 GB"\n\nprocess_allocations:\n  default_task:\n    cpus: 2\n    memory: "4 GB"\n  heavy_task:\n    cpus: 4\n    memory: "6 GB"\n' "${{ github.workspace }}" > .ci/infrastructure.yaml
+          printf '#CHROM\tPOS\tID\tREF\tALT\nchr1\t1000\tchr1:1000:A:G\tA\tG\n' > .ci/inputs/eur_stub.pvar
+          printf '#FID\tIID\tSEX\tPHENO\nEUR\tEUR_01\t0\t-9\n' > .ci/inputs/eur_stub.psam
+          printf 'manifest_version: 1\ntarget_build: GRCh38\ndatasets:\n  - id: synthetic_afr\n    label: Synthetic AFR WGS\n    active: true\n    assay: WGS\n    superpop: AFR\n    sample_count: 4\n    build: GRCh38\n    input:\n      format: vcf\n      paths:\n        - .ci/inputs/afr_stub.vcf.gz\n        - .ci/inputs/afr_stub.vcf.gz.tbi\n  - id: synthetic_eur\n    label: Synthetic EUR PLINK2\n    active: true\n    assay: WES\n    superpop: EUR\n    sample_count: 4\n    build: GRCh38\n    input:\n      format: plink2\n      paths:\n        - .ci/inputs/eur_stub.pgen\n        - .ci/inputs/eur_stub.pvar\n        - .ci/inputs/eur_stub.psam\n' > .ci/references.yaml
+
+      - name: Run DSL2 smoke test
+        run: |
+          nextflow run . \
+            -profile test \
+            -stub-run \
+            -without-docker \
+            --ref_manifest .ci/references.yaml \
+            --infrastructure_config .ci/infrastructure.yaml \
+            --outdir .ci/results
+
+      - name: Assert final manifest exists
+        run: |
+          test -f .ci/results/models/reference_manifest.json
