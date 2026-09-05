@@ -6,7 +6,49 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
 [![PLINK v2.0](https://img.shields.io/badge/PLINK-v2.0-6A6A6A.svg)](https://www.cog-genomics.org/plink/2.0/)
 
-A regulatory-compliant, deterministic Nextflow DSL2 pipeline for constructing two-layer population reference PCA models (Global + Superpopulations) for genomic variant classification and sample projection.
+## Executive Summary
+
+`nf_PopPCA_refgen` is a regulatory-compliant, deterministic Nextflow DSL2 pipeline for generating two-layer population PCA reference models used in genomic ancestry projection and classification workflows.
+
+Core capabilities:
+
+- **Two-Layer SVD Architecture**: builds a global PCA basis (Layer 1) and five continental sublayers (Layer 2: AFR, AMR, EAS, EUR, SAS) for hierarchical projection.
+- **Multi-Assay & Dynamic Ingestion**: ingests both whole genome sequencing VCF and SNP microarray PLINK inputs, then harmonizes variants into a GRCh38-compatible coordinate representation.
+- **Audit-Grade Provenance & Determinism**: emits a complete `provenance.json` lineage record including SHA-256 input/output checksums, runtime environment details, and execution metadata.
+- **Flexible Configuration Workflows**: supports both dynamic CLI runtime overrides and direct zero-CLI configuration edits in `assets/*.yaml`.
+
+## Table of Contents
+
+- [Executive Summary](#executive-summary)
+- [Key architectural features](#key-architectural-features)
+  - [Two-layer SVD decomposition](#two-layer-svd-decomposition)
+  - [Regulatory compliance & auditability](#regulatory-compliance--auditability)
+  - [Multi-mount portability](#multi-mount-portability)
+- [Architecture & dataflow](#architecture--dataflow)
+  - [Execution flow](#execution-flow)
+- [Flexible Reference Ingestion & Diverse Cohort Vision](#flexible-reference-ingestion--diverse-cohort-vision)
+  - [Architectural Design For Mixed Assays](#architectural-design-for-mixed-assays)
+  - [Vision For Diverse Reference Expansion](#vision-for-diverse-reference-expansion)
+  - [Example Mixed-Cohort Manifest Snippet](#example-mixed-cohort-manifest-snippet)
+  - [Two-layer projection framework](#two-layer-projection-framework)
+- [Pipeline Dependencies & Methods](#pipeline-dependencies--methods)
+- [Quickstart & usage](#quickstart--usage)
+  - [Integration test](#integration-test)
+  - [Production execution](#production-execution)
+  - [Execution parameters](#execution-parameters)
+- [Configuration Workflows](#configuration-workflows)
+  - [1. Dynamic CLI Overrides (At Runtime)](#1-dynamic-cli-overrides-at-runtime)
+  - [2. Direct Asset File Modification (Zero-CLI Default Configuration)](#2-direct-asset-file-modification-zero-cli-default-configuration)
+- [Configuration Assets Overview](#configuration-assets-overview)
+- [Pre-computed Example Reference Model](#pre-computed-example-reference-model)
+- [Pre-computed reference model bundle](#pre-computed-reference-model-bundle)
+- [Output directory specification](#output-directory-specification)
+- [CI and smoke testing](#ci-and-smoke-testing)
+- [Audit & provenance verification](#audit--provenance-verification)
+- [Requirements](#requirements)
+- [Repository layout](#repository-layout)
+- [Citation & license](#citation--license)
+- [Notes for operators](#notes-for-operators)
 
 ## Key architectural features
 
