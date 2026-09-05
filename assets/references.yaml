@@ -1,3 +1,57 @@
+# nf_PopPCA_refgen reference manifest
+#
+# Purpose:
+# - Defines which source cohorts are active for model generation and how each
+#   dataset is staged into the workflow.
+#
+# Multi-assay support:
+# - Mixed WGS and SNP-array cohorts are supported in one run using
+#   input.format values:
+#   - vcf      -> VCF/VCF.GZ cohorts
+#   - plink1   -> BED/BIM/FAM cohorts
+#   - plink2   -> PGEN/PVAR/PSAM cohorts
+# - During normalization, all supported inputs are converted to a canonical
+#   internal representation and harmonized to standardized IDs
+#   CHROM:POS:REF:ALT.
+#
+# Path and structure model:
+# - datasets[] entries each define an id, assay, superpop, build, and input.
+# - input.paths supports either:
+#   - plain string paths, or
+#   - object records with { path, expected_sha256 }.
+# - metadata.path also supports { path, expected_sha256 } for integrity checks.
+#
+# Required field definitions (schema names used in this manifest):
+# - id: unique cohort identifier for lineage and outputs.
+# - input.format: declared source format (vcf, plink1, plink2).
+# - input.paths[].path (or metadata.path.path): file location.
+# - build: dataset genome build (genome_build concept; GRCh38 in this release).
+# - expected_sha256: optional integrity value (sha256 concept) for fail-closed
+#   preflight validation.
+#
+# Coordinate system:
+# - target_build and dataset.build should remain aligned (GRCh38 for this
+#   release) to prevent variant coordinate drift during merges/projection.
+#
+# Integrity model:
+# - expected_sha256 values are validated during manifest parsing for active
+#   datasets whenever provided.
+# - A missing file or checksum mismatch causes an early fail-closed stop.
+#
+# Path resolution model:
+# - Relative paths are resolved against params.ref_dir at runtime.
+# - Keep paths repository-relative (for example inputs/... ) for portability.
+#
+# Dynamic cohort expansion:
+# - Add new global, regional, indigenous, or biobank cohorts by appending new
+#   dataset entries under datasets[].
+# - Cohorts can be activated/deactivated via active: true/false without code
+#   changes, enabling iterative expansion of the ancestry coordinate basis.
+#
+# Activation model:
+# - Set active: true only for cohorts intended for the current build.
+# - Inactive cohorts may remain documented as templates for future expansion.
+
 manifest_version: 1
 target_build: GRCh38
 description: >-

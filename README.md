@@ -52,6 +52,50 @@ graph TD
     H --> K[provenance.json]
 ```
 
+## Flexible Reference Ingestion & Diverse Cohort Vision
+
+The ingestion architecture is designed to let users add, remove, or substitute reference cohorts by editing only `assets/references.yaml`, without changing pipeline code. This supports mixed-assay builds that combine WGS and SNP microarray cohorts under a single harmonized ancestry model workflow.
+
+### Architectural Design For Mixed Assays
+
+- `NORMALIZE_INPUTS` ingests configured `vcf`, `plink1`, and `plink2` datasets and harmonizes them into canonical GRCh38-compatible variant IDs (`CHROM:POS:REF:ALT`).
+- `INTERSECT_VARIANTS` computes the consensus shared locus core dynamically across all active cohorts defined in the manifest.
+- `QC_AND_PRUNE` applies missingness and LD pruning controls so high-density WGS cohorts do not dominate or bias the shared coordinate basis relative to sparser array panels.
+
+### Vision For Diverse Reference Expansion
+
+The pipeline is architecturally ready for broad cohort expansion, including large global references and regional panels (for example 1000G, HGDP, All of Us, biobank cohorts, and specialized regional or indigenous population references) as data become available.
+
+As new cohorts are released, users can extend the ancestry coordinate basis by adding new manifest entries in `assets/references.yaml`, then rerunning the same workflow.
+
+### Example Mixed-Cohort Manifest Snippet
+
+```yaml
+datasets:
+  - id: cohort_wgs_global
+    active: true
+    assay: WGS
+    superpop: GLOBAL
+    build: GRCh38
+    input:
+      format: vcf
+      paths:
+        - path: inputs/cohort_wgs/global_chr1.vcf.gz
+          expected_sha256: "<sha256>"
+
+  - id: cohort_array_regional
+    active: true
+    assay: Microarray
+    superpop: AMR
+    build: GRCh38
+    input:
+      format: plink1
+      paths:
+        - path: inputs/array/regional_panel.bed
+        - path: inputs/array/regional_panel.bim
+        - path: inputs/array/regional_panel.fam
+```
+
 ### Two-layer projection framework
 
 For a standardized patient dosage matrix $\tilde{X}$ and a normalized weight matrix $W$, the projected principal component score is computed as:
@@ -77,6 +121,13 @@ Downstream patient VCF
         v
   Fine-grained sample projection / classification
 ```
+
+## Pipeline Dependencies & Methods
+
+- PLINK 1.9 (`v1.90b6.21` or equivalent 1.9 build) is used for initial multi-cohort reference merging and dataset harmonization.
+- PLINK 2 (`v2.00a3+`) is used for high-throughput variant filtering, LD pruning, and PCA eigenvector/allele loading computations.
+
+These tools are orchestrated through the Nextflow DSL2 modules in `modules/local/` and are version-captured in provenance outputs.
 
 ## Quickstart & usage
 
@@ -142,6 +193,14 @@ After updating these files, run with a clean default command and no extra CLI fl
 ```bash
 nextflow run .
 ```
+
+## Configuration Assets Overview
+
+- `assets/params.yaml`: user-facing pipeline defaults including QC thresholds, PCA dimensions, and default run paths.
+- `assets/references.yaml`: active cohort manifest, dataset paths, coordinate-build declarations, and optional SHA-256 integrity expectations.
+- `assets/infrastructure.yaml`: executor/container runtime defaults plus CPU and memory allocation limits.
+
+Each configuration file includes inline documentation headers so defaults can be edited directly in place without requiring command-line parameter overrides.
 
 ## Pre-computed Example Reference Model
 
