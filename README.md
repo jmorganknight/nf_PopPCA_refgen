@@ -102,7 +102,7 @@ For a standardized patient dosage matrix $\tilde{X}$ and a normalized weight mat
 
 $$PC_{patient, k} = \sum_{j} \tilde{X}_{ij} \cdot W_{jk}$$
 
-where \(\tilde{X}_{ij}\) is the standardized genotype dosage for variant \(j\) and \(W_{jk}\) is the normalized variant load weight for component \(k\).
+where X~<sub>ij</sub> is the standardized genotype dosage for variant j and W<sub>jk</sub> is the normalized variant load weight for component k.
 
 ```text
 Downstream patient VCF
